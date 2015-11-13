@@ -13,7 +13,7 @@ module.exports = function(config){
 
       
       'test/unit/controllersSpec.js',
-	   'test/unit/servicesSpec.js'
+	  'test/unit/servicesSpec.js'
     ],
 
     exclude : [
