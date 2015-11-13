@@ -12,7 +12,8 @@ module.exports = function(config){
       'app/modules/**/*.js', //for our app modules
 
       
-      'test/unit/servicesSpec.js'
+      'test/unit/controllersSpec.js',
+	   'test/unit/servicesSpec.js'
     ],
 
     exclude : [
