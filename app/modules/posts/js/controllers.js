@@ -5,7 +5,8 @@ angular.module('spBlogger.posts.controllers',[]).controller('PostController',['$
 	};
     $scope.posts=$scope.getAllPosts();*/
 
-    $scope.posts=Post.query(); //obtain all the posts
+    $scope.posts=Post.query();
+
     
 
 }]).controller('PostDetailsController',['$stateParams','$state','$scope','Post',function($stateParams,$state,$scope,Post){
