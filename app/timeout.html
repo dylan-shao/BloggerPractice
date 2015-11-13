@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8" />
+		<title ng-bind="title"></title>
+	</head>
+	<body ng-controller="TimeoutController">
+		<div>
+			  <button id="button1" ng-click="scheduleTask()">Get Message after 3 seconds
+			  </button>
+			<br/>Message fetched: {{message}}
+		</div>
+		<div>	
+			  <button id="button2" ng-click="scheduleTask1()">Get Message after 3 seconds with apply() call
+			  </button>
+			<br/>Message1 fetched: {{message1}}
+		</div>
+		<div>
+			  <button id="button3" ng-click="scheduleTask2()">Get Message after 3 seconds with apply() call
+			  </button>
+			<br/>Message2 fetched: {{message2}}
+		</div>
+	</body>
+
+
+<script src="lib/angular/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+</html>
+
