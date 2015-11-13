@@ -14,6 +14,6 @@ angular.module('spBlogger.posts').config(['$stateProvider','$urlRouterProvider',
 		controller: 'PostDetailsController'
 	});
 
-	$urlRouterProvider.otherwise('../app');
+	$urlRouterProvider.otherwise('/');
 
 }]);
