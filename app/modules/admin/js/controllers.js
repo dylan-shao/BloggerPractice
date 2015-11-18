@@ -7,9 +7,9 @@ angular.module('spBlogger.admin.controllers',[]).controller('AdminController',['
             $state.go('login');
         });
     }
-}]).controller('PostCreationController',['$scope','$state','Post',function($scope,$state/*,Post*/){
+}]).controller('PostCreationController',['$scope','$state','Post',function($scope,$state,Post){
 
-    //$scope.post=new Post();
+    $scope.post=new Post();
 
     $scope.buttonText="Create";
 

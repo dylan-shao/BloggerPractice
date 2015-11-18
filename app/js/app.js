@@ -1,6 +1,6 @@
 'use strict'
 
-var routerApp=angular.module('spBlogger',['ui.router','ngResource','spBlogger.admin','spBlogger.posts']);
+var routerApp=angular.module('spBlogger',['ngSanitize','ui.router','ngResource','spBlogger.admin','spBlogger.posts']);
 
 routerApp.config(['$locationProvider','$urlRouterProvider',function($locationProvider,$urlRouterProvider){
 	 $locationProvider.html5Mode(false);

@@ -13,7 +13,7 @@ angular.module('spBlogger.posts.directives',[]).directive('spbComments',['Post',
 
            scope.saveComment=function(){
 
-               var postID=scope.postInstance._id,
+               var postID=scope.postInstance._id, //la post istance proviene dal parent
                    savedPostInstance={};
 
                scope.comment.datePublished=new Date();

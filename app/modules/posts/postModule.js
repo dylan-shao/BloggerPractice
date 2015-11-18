@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('spBlogger.posts',['spBlogger.posts.controllers','spBlogger.posts.services']);
+angular.module('spBlogger.posts',['spBlogger.posts.controllers','spBlogger.posts.services','spBlogger.posts.directives']);
 
 angular.module('spBlogger.posts').config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 	$stateProvider.state('allPosts',{

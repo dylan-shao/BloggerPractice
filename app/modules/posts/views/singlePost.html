@@ -1,4 +1,4 @@
-<div class"row">
+<!--div class"row">
   <div class="col-xs-8 col-xs-offset-2">
 	<span class="pull-right cross-btn" ng-click="closePost()">×</span>
  	<h1>{{singlePost.title}}</h1>
@@ -6,5 +6,21 @@
  	<div class="postContent">
 	  {{singlePost.content}}
  	</div>
+  </div>
+</div-->
+
+<!--div class="comments">
+    <spb-comments post-instance="singlePost"></spb-comments>
+</div-->
+
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2 singlePost">
+	<span class="pull-right cross-btn" ng-click="closePost()">&times;</span>  
+	<h1>{{singlePost.title}}</h1>
+	<h5>{{'BY'}}: {{singlePost.author}} | {{singlePost.datePublished | date:'MM-dd-yyyy'}}</h5>
+	<div class="postContent" ng-bind-html="singlePost.content"></div>
+    <div class="comments">
+        <spb-comments post-instance="singlePost"></spb-comments>
+    </div>
   </div>
 </div>
