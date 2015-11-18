@@ -126,5 +126,12 @@ app.controller('WeatherController',['$scope','weatherService',function($scope, w
 
 app.controller("DirectivesController", function($scope){
 	$scope.message="I love AngularJS";
+
+	$scope.fromParent="messaggio dallo scope padre";
+
+	$scope.showMessage=function(arg){
+    	console.log('Message Changed with argument'+arg);
+	}
+
 });
 

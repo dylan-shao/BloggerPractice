@@ -4,15 +4,15 @@
 	<head>
 
 		<title>End to End testing with protractor</title>
-
+        <link rel="stylesheet" href="./app.css">
 	</head>
 		
-	<body ng-app="app">
+	<body ng-app="app" ng-cloak>
 
 		<div ng-controller="TestCtrl">
 			<h1>CLASSIC HELLO ANGULAR TEST</h1>
 		 	<p>Name : <input type="text" ng-model="firstName"></p>
-		 	<h1>Hello {{firstName}}!</h1>
+		 	<h1 ng-cloak>Hello {{firstName}}!</h1>
 
 		    <h1>PROMISES TESTS</h1>
 			<input type="button" ng-click="getAsyncMessage()" value="Get me an async message"/>
@@ -40,7 +40,7 @@
 		<div ng-controller="DirectivesController">
 			<h1>DIRECTIVES CONTROLLER</h1>
 			<input type="text" ng-model="message" placeholder="Enter message" />
-			<hello-world></hello-world>
+			<hello-world message="{{message}}" show-message-attr="showMessage(arg)"></hello-world>
 		</div>	
 
 		<script src="bower_components/angular/angular.js"></script>
