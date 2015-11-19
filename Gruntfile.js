@@ -9,7 +9,7 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: '',
-                src:['app/**','scripts/web-server.js','!app/lib/**','!app/modules/**/*.js','!app/js/**','!app/css/**'],
+                src:['app/**','app/web-server.js','!app/lib/**','!app/modules/**/*.js','!app/js/**','!app/css/**'],
                 dest: 'dist/'
             }
         },
@@ -30,6 +30,7 @@ module.exports = function (grunt) {
         }
     });
 
+    //registrazione dei task per permettere la concatenazione e la minificazione
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
