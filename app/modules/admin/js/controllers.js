@@ -1,6 +1,6 @@
 /*'use strict'*/
 
-angular.module('spBlogger.admin.controllers',[]).controller('AdminController',['$scope',/*'authService',*/'$state',/*'user',*/function($scope,/*authService,*/$state/*user*/){
+angular.module('spBlogger.admin.controllers',[]).controller('AdminController',['$scope','authService','$state',function($scope,authService,$state){
 
     $scope.logout=function(){
         authService.logout().then(function(){
@@ -49,20 +49,20 @@ angular.module('spBlogger.admin.controllers',[]).controller('AdminController',['
         }
     }
 
-}])/*.controller('LoginController',['$scope','authService','$state',function($scope,authService,$state){
+}]).controller('LoginController',['$scope','authService','$state',function($scope,authService,$state){
 
     $scope.buttonText="Login";
 
     $scope.login=function(){
 
         $scope.buttonText="Logging in. . .";
-
+        //la login viene vista come una promise
         authService.login($scope.credentials.username,$scope.credentials.password).then(function(data){
             $state.go('admin.postViewAll');
-        },function(err){
+        },function(err){ //se non si ha l'authorization
             $scope.invalidLogin=true;
-        }).finally(function(){
+        }).finally(function(){ //alla fine dell'operazione, o sia andata bene o sia andata male, il testo ritorna ad essere Login
             $scope.buttonText="Login";
         });
     }
-}])*/
+}])

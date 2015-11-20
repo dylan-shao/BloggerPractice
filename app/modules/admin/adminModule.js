@@ -28,5 +28,11 @@ angular.module('spBlogger.admin').config(['$stateProvider',function($stateProvid
 		controller: 'PostListController',
 		templateUrl:'modules/admin/views/admin-all-posts.html'
 	});
+
+	$stateProvider.state('login',{
+    	url:'/login',
+    	controller:'LoginController',
+    	templateUrl:'modules/admin/views/login.html'
+	});
 	
 }]);
