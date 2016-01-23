@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-/*versione 1.0*/
+/*versione 1.5*/
 
 var util = require('util'),
     http = require('http'),
