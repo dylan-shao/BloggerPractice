@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+/*versione 0.3*/
+
 var util = require('util'),
     http = require('http'),
     fs = require('fs'),
