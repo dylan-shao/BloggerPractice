@@ -15,5 +15,8 @@
     "grunt-usemin": "~2.0.2",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-clean": "~0.5.0"
+  },
+  "scripts":{
+    "start":"node scripts/web-server.js"
   }
 }

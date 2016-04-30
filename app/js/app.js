@@ -1,15 +1,8 @@
 'use strict'
 
-var routerApp=angular.module('spBlogger',['ngAnimate','ngCookies','ngSanitize','ui.router','ngResource','spBlogger.admin','spBlogger.posts']);
+angular.module('spBlogger',['ui.router','spBlogger.admin','spBlogger.posts'])
+	.run(['$state',function($state){
+		  
+	      $state.go('allPosts');
 
-routerApp.config(['$locationProvider','$urlRouterProvider',function($locationProvider,$urlRouterProvider){
-	 $locationProvider.html5Mode(false);
-
-
-}]);
-
-routerApp.run(['$state',function($state){
-	  
-      $state.go('allPosts');
-
-}]);
+	}]);

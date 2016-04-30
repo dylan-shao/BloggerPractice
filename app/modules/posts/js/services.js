@@ -31,30 +31,7 @@ return {
     permalink: 'simple-title3',
     author: 'Sandeep',
     datePublished: '2012-06-04'
-    },
-    {
-    id: 5,
-    title: 'Simple title3_a',
-    content: 'Sample content...',
-    permalink: 'simple-title3_a',
-    author: 'Sandeep',
-    datePublished: '2012-06-04'
-    },
-    {
-    id: 6,
-    title: 'Simple title3_b',
-    content: 'Sample content...',
-    permalink: 'simple-title3_b',
-    author: 'Sandeep',
-    datePublished: '2012-06-04'
-    }, {
-    id: 7,
-    title: 'Simple title4',
-    content: 'Sample content...',
-    permalink: 'simple-title4',
-    author: 'Sandeep',
-    datePublished: '2012-07-04'
-  }],
+    }],
   getAll: function() {
     return this.posts;
   },

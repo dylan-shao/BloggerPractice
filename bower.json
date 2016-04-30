@@ -1,0 +1,17 @@
+{
+  "name": "ABlogExample",
+  "description": "A Single Page Blogging app built with angularJS",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/dgiac85/sp-blogger-Node",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5"
+  }
+}
