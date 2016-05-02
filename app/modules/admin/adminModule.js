@@ -1,4 +1,4 @@
-angular.module('spBlogger.admin',['spBlogger.admin.controllers'])
+angular.module('spBlogger.admin',['spBlogger.admin.controllers','spBlogger.admin.services'])
 	.config(['$stateProvider',function($stateProvider){
 		$stateProvider.state('admin',{
 			url:'/admin',
@@ -16,6 +16,6 @@ angular.module('spBlogger.admin',['spBlogger.admin.controllers'])
 		}).state('admin.postViewAll',{
 			url:'',
 			controller:'PostListController',
-			templateUrl:'/modules/admin/views/admin-all-posts.html'
+			templateUrl:'modules/admin/views/admin-all-posts.html'
 		});
 	}]);
