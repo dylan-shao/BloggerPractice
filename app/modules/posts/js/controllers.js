@@ -3,9 +3,9 @@ angular.module('spBlogger.posts.controllers',[])
         scope.posts = Post.query();
     }])
     .controller('PostDetailsController', ['$stateParams','$state','$scope','Post'
-        ,function($stateParams,state,scope,Post){
-        scope.closePost = function(){
+        ,function($stateParams,state,$scope,Post){
+        $scope.closePost = function(){
             state.go('allPosts');
         }
-        scope.singlePost = Post.get({id:$stateParams.id});
+        $scope.singlePost = Post.get({id:$stateParams.id});
     }]);

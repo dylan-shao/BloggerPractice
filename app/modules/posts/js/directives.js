@@ -1,34 +1,42 @@
 'use strict'
 
-angular.module('spBlogger.posts.directives',[]).directive('spbComments',['Post',function(Post){
-   return {
-       restrict:'AEC',
+angular.module('spBlogger.posts.directives', [])
+    .directive('spbComments',  function(Post) {
+        return {
+            restrict: 'AEC',
 
-       scope:{
-           postInstance:'='
-       },
-       replace:true,
+            scope: {
+                postInstance: '='
+            },
+            replace: true,
 
-       link:function(scope,elem,attrs){
+            link: function(scope, elem, attrs) {
 
-           scope.saveComment=function(){
+                scope.saveComment = function() {
 
-               var postID=scope.postInstance._id, //la post istance proviene dal parent
-                   savedPostInstance={};
+                    var postID = scope.postInstance._id, //la post istance proviene dal parent
+                        savedPostInstance = new Post();
+                        console.log(savedPostInstance);
+                    
 
-               scope.comment.datePublished=new Date();
+                    scope.comment.datePublished = new Date();
 
-               angular.copy(scope.postInstance,savedPostInstance);
 
-               savedPostInstance.comments.unshift(scope.comment);
+                    angular.copy(scope.postInstance, savedPostInstance);
+                    console.log(savedPostInstance);
+                    console.log(scope.postInstance);
+                    
 
-               scope.postInstance.comments.unshift(scope.comment);
+                    savedPostInstance.comments.unshift(scope.comment);
 
-               scope.comment={};
+                    scope.postInstance.comments.unshift(scope.comment);
 
-               savedPostInstance.$update();
-           }
-       },
-       templateUrl:'modules/posts/views/comments.html'
-   }
-}]);
+                    scope.comment = {};
+
+                    savedPostInstance.$update();
+                   //scope.postInstance.$update();
+                }
+            },
+            templateUrl: 'modules/posts/views/comments.html'
+        }
+    });

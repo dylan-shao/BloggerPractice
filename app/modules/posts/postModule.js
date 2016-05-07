@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('spBlogger.posts',['spBlogger.posts.controllers','spBlogger.posts.services','spBlogger.posts.directives'])
-	.config(['$stateProvider','$locationProvider' , function(stateProvider, locationProvider){
+	.config(['$stateProvider','$urlRouterProvider', function(stateProvider,$urlRouterProvider){
 		stateProvider.state('allPosts', {
 			url:'/posts',
 			templateUrl:'modules/posts/views/posts.html',
@@ -12,5 +12,6 @@ angular.module('spBlogger.posts',['spBlogger.posts.controllers','spBlogger.posts
 			templateUrl:'modules/posts/views/singlePost.html',
 			controller:'PostDetailsController'
 		});
+		$urlRouterProvider.otherwise('/');
 	}])
 
