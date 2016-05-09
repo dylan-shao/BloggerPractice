@@ -9,7 +9,7 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: '',
-                src:['app/**','app/web-server.js','!app/lib/**','!app/modules/**/*.js','!app/modules/**/*.css','!app/js/**','!app/css/**','!app/Prototypes/**/*','!app/Prototypes','!app/Prototypes/*'],
+                src:['app/**','app/web-server.js','!app/libs/**','!app/modules/**/*.js','!app/modules/**/*.css','!app/js/**','!app/css/**','!app/Prototypes/**/*','!app/Prototypes','!app/Prototypes/*'],
                 dest: 'dist/'
             }
         },

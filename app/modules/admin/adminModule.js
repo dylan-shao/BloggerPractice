@@ -1,4 +1,4 @@
-angular.module('spBlogger.admin',['spBlogger.admin.controllers','spBlogger.admin.services'])
+angular.module('spBlogger.admin',['spBlogger.admin.controllers','spBlogger.admin.services','spBlogger.admin.filters'])
 	.config(['$stateProvider',function($stateProvider){
 		$stateProvider.state('admin',{
 			url:'/admin',

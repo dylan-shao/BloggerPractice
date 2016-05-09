@@ -1,35 +1,55 @@
-.postTitle{
-	margin: 0;
+.postTitle {
+    margin: 0;
 }
-.cross-btn{
-	cursor:pointer;
-	font-size:22px;
-	font-weight:bold;
+
+.cross-btn {
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
 }
-.postContent{
-	text-align:justify;
+
+.postContent {
+    text-align: justify;
 }
-.bottom-buffer{
-    margin-bottom:10px;
+
+.bottom-buffer {
+    margin-bottom: 10px;
 }
-.small-button{
-    width:100px;
+
+.small-button {
+    width: 100px;
 }
-.single-comment{
+
+.single-comment {
     margin-bottom: 20px;
-    padding:20px;
+    padding: 20px;
     border: 1px solid #ccc;
-    border-radius:10px;
+    border-radius: 10px;
+    background-color: #99b3ff
 }
-.single-comment .info{
-    font-size:12px;
-    color:#999;
+
+.single-comment .info {
+    font-size: 12px;
+    color: #999;
 }
-.single-comment .content{
-    font-size:16px;
-    color:#333;
-    margin-bottom:10px;
-}
-.single-comment .info{
+
+.single-comment .content {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
 
 }
+
+.single-comment .info {}
+
+.single-comment.ng-enter {
+    -webkit-transition: 1s linear all;
+    -o-transition: 1s linear all;
+    -moz-transition: 1s linear all;
+    opacity: 0.2;
+}
+
+.single-comment.ng-enter.ng-enter-active {
+    opacity: 0.8;
+}
+
