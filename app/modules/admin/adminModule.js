@@ -4,6 +4,12 @@ angular.module('spBlogger.admin',['spBlogger.admin.controllers','spBlogger.admin
 			url:'/admin',
 			abstract:true,
 			controller:'AdminController',
+			resolve:{
+				user:['authService','$q',function(authService,$q){
+					return authService.user || $q.reject
+					({unAuthorized:true})
+				}]
+			},
 			templateUrl:'modules/admin/views/admin-home.html'
 		}).state('admin.postNew',{
 			url:'/posts/new',
@@ -17,5 +23,35 @@ angular.module('spBlogger.admin',['spBlogger.admin.controllers','spBlogger.admin
 			url:'',
 			controller:'PostListController',
 			templateUrl:'modules/admin/views/admin-all-posts.html'
-		});
-	}]);
+		}).state('login',{
+			url:'/login',
+			controller:'LoginController',
+			resolve:{
+				user: ['authService','$q',function(authService,$q){
+					if(authService.user){
+						return $q.reject({authorized:true})
+					}
+				}]
+			},
+			templateUrl:'modules/admin/views/login.html'
+		})
+	}])
+	.run(['$rootScope','$state','$cookieStore','authService',
+			function($rootScope,$state,$cookieStore,authService){
+				$rootScope.$on('$stateChangeError', 
+					function(event, toState, toParams, fromState, fromParams, error){
+						if(error.unAuthorized){
+							$state.go("login");
+						}
+					});
+				authService.user=$cookieStore.get('user');
+				$rootScope.$on('$stateChangeError',
+					function(event, toState, toParams, fromState, fromParams,error){
+						if(error.unAuthorized){
+							$state.go('login');
+						}
+						else if(error.authorized){
+							$state.go('admin.postViewAll');
+						}
+					})
+			}])

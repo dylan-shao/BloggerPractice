@@ -1,8 +1,10 @@
 'use strict'
 
-angular.module('spBlogger', ['ui.router', 'spBlogger.admin', 'spBlogger.posts', 'ngResource', 'ngAnimate', 'pascalprecht.translate'])
-    .config(['$locationProvider', '$urlRouterProvider', function($locationProvider, $urlRouterProvider) {
+angular.module('spBlogger', ['ui.router', 'spBlogger.admin', 'spBlogger.posts', 'ngResource', 'ngAnimate', 'pascalprecht.translate','ngCookies'])
+    .config(['$locationProvider', '$urlRouterProvider', '$httpProvider',
+        function($locationProvider, $urlRouterProvider,$httpProvider) {
         $locationProvider.html5Mode(false);
+        $httpProvider.defaults.withCredentials = true;
 
 
     }])
